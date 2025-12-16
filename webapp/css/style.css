@@ -35,11 +35,11 @@
 .loginTitle {
     color: #ffffff !important;
     font-weight: 700 !important;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .loginLogo {
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
 }
 
 .loginButton .sapMBtnInner {
@@ -48,32 +48,51 @@
     color: white;
     font-weight: 600;
     border-radius: 6px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: all 0.2s ease;
 }
 
 .loginButton:hover .sapMBtnInner {
     background-color: #2a5298;
     transform: translateY(-2px);
-    box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
 /* Dashboard Styles */
 .tileLayout {
     transition: transform 0.2s, box-shadow 0.2s;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+/* Specific styling for the tiles to look distinct */
+.tileLayout:nth-child(1) {
+    border-top: 4px solid #d93025;
+    /* Red for Incidents */
+}
+
+.tileLayout:nth-child(2) {
+    border-top: 4px solid #f9ab00;
+    /* Yellow/Orange for Risks */
+}
+
+.tileLayout:nth-child(3) {
+    border-top: 4px solid #1e8e3e;
+    /* Green for Safety Score */
 }
 
 .tileLayout:hover {
     transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     cursor: pointer;
 }
 
 .sapTntToolHeader {
     background-color: #ffffff;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 .sapTntToolHeader .sapMTitle {

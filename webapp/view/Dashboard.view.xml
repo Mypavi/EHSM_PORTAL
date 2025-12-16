@@ -32,24 +32,26 @@
                 <pages>
                     <Page id="overviewPage" title="Overview" showHeader="false">
                         <content>
-                            <l:VerticalLayout class="sapUiContentPadding" width="100%">
+                            <VBox class="sapUiContentPadding" width="100%">
                                 <Title text="Key Performance Indicators" titleStyle="H2" class="sapUiMediumMarginBottom"/>
-                                <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Open Incidents" subheader="High Priority" press="onPressTileIncident">
-                                    <TileContent unit="Count" footer="Current">
-                                        <NumericContent value="{/kpi/openIncidents}" icon="sap-icon://alert" valueColor="Error" />
-                                    </TileContent>
-                                </GenericTile>
-                                <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Identified Risks" subheader="High Severity" press="onPressTileRisk">
-                                    <TileContent unit="Count" footer="AT01">
-                                        <NumericContent value="{/kpi/highRisks}" icon="sap-icon://shield" valueColor="Critical" />
-                                    </TileContent>
-                                </GenericTile>
-                                <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Safety Score" subheader="Plant AT01">
-                                    <TileContent unit="%">
-                                        <NumericContent value="85" icon="sap-icon://accept" valueColor="Good" />
-                                    </TileContent>
-                                </GenericTile>
-                            </l:VerticalLayout>
+                                <HBox wrap="Wrap" class="tileContainer">
+                                    <GenericTile class="sapUiMediumMarginEnd sapUiMediumMarginBottom tileLayout" header="Open Incidents" subheader="High Priority" press="onPressTileIncident">
+                                        <TileContent unit="Count" footer="Current">
+                                            <NumericContent value="{/kpi/openIncidents}" icon="sap-icon://alert" valueColor="Error" />
+                                        </TileContent>
+                                    </GenericTile>
+                                    <GenericTile class="sapUiMediumMarginEnd sapUiMediumMarginBottom tileLayout" header="Identified Risks" subheader="High Severity" press="onPressTileRisk">
+                                        <TileContent unit="Count" footer="AT01">
+                                            <NumericContent value="{/kpi/highRisks}" icon="sap-icon://shield" valueColor="Critical" />
+                                        </TileContent>
+                                    </GenericTile>
+                                    <GenericTile class="sapUiMediumMarginEnd sapUiMediumMarginBottom tileLayout" header="Safety Score" subheader="Plant AT01">
+                                        <TileContent unit="%">
+                                            <NumericContent value="85" icon="sap-icon://accept" valueColor="Good" />
+                                        </TileContent>
+                                    </GenericTile>
+                                </HBox>
+                            </VBox>
                         </content>
                     </Page>
                     
