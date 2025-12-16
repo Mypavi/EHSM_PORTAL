@@ -121,7 +121,6 @@ sap.ui.define([
                 ],
                 plants: [
                     { key: "AT01", text: "AT01 - Austria Plant" },
-                    { key: "AU01", text: "AU01 - Australia Plant 1" },
                     { key: "AU02", text: "AU02 - Australia Plant 2" },
                     { key: "BE01", text: "BE01 - Belgium Plant" },
                     { key: "CA04", text: "CA04 - Canada Plant" }
@@ -167,24 +166,32 @@ sap.ui.define([
                 if (oBindingRisks) oBindingRisks.filter(aFilters);
             }
 
-            // Update KPIs based on selected plant (Mock Logic)
+            // Update KPIs based on selected plant (Dynamic Logic)
             var oModel = this.getView().getModel();
-            if (sPlant === "AT01") {
-                oModel.setProperty("/kpi/openIncidents", 4);
-                oModel.setProperty("/kpi/highRisks", 4);
-            } else if (sPlant === "BE01") {
-                oModel.setProperty("/kpi/openIncidents", 0);
-                oModel.setProperty("/kpi/highRisks", 3);
-            } else if (sPlant === "CA04") {
-                oModel.setProperty("/kpi/openIncidents", 0);
-                oModel.setProperty("/kpi/highRisks", 3);
-            } else if (sPlant === "AU02") {
-                oModel.setProperty("/kpi/openIncidents", 0);
-                oModel.setProperty("/kpi/highRisks", 4);
-            } else {
-                oModel.setProperty("/kpi/openIncidents", 0);
-                oModel.setProperty("/kpi/highRisks", 0);
+            var aAllIncidents = oModel.getProperty("/incidents");
+            var aAllRisks = oModel.getProperty("/risks");
+
+            // Calculate Open Incidents (Status 'Open') for selected plant
+            var iOpenIncidents = 0;
+            if (aAllIncidents) {
+                var aPlantIncidents = aAllIncidents.filter(function (item) {
+                    return item.Plant === sPlant && item.IncidentStatus === "Open";
+                });
+                iOpenIncidents = aPlantIncidents.length;
             }
+
+            // Calculate High Risks (Severity 'High') for selected plant
+            var iHighRisks = 0;
+            if (aAllRisks) {
+                var aPlantRisks = aAllRisks.filter(function (item) {
+                    return item.Plant === sPlant && item.RiskSeverity === "High";
+                });
+                iHighRisks = aPlantRisks.length;
+            }
+
+            // Update Model
+            oModel.setProperty("/kpi/openIncidents", iOpenIncidents);
+            oModel.setProperty("/kpi/highRisks", iHighRisks);
         },
 
         onPlantChange: function (oEvent) {
