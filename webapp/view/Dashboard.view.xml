@@ -52,11 +52,11 @@
                                         </TileContent>
                                     </GenericTile>
                                     <GenericTile class="sapUiMediumMarginEnd sapUiMediumMarginBottom tileLayout" header="Identified Risks" subheader="High Severity" press="onPressTileRisk">
-                                        <TileContent unit="Count" footer="AT01">
+                                        <TileContent unit="Count" footer="{/selectedPlant}">
                                             <NumericContent value="{/kpi/highRisks}" icon="sap-icon://shield" valueColor="Critical" />
                                         </TileContent>
                                     </GenericTile>
-                                    <GenericTile class="sapUiMediumMarginEnd sapUiMediumMarginBottom tileLayout" header="Safety Score" subheader="Plant AT01">
+                                    <GenericTile class="sapUiMediumMarginEnd sapUiMediumMarginBottom tileLayout" header="Safety Score" subheader="{= 'Plant ' + ${/selectedPlant} }">
                                         <TileContent unit="%">
                                             <NumericContent value="85" icon="sap-icon://accept" valueColor="Good" />
                                         </TileContent>

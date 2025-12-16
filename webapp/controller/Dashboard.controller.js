@@ -168,6 +168,10 @@ sap.ui.define([
 
             // Update KPIs based on selected plant (Dynamic Logic)
             var oModel = this.getView().getModel();
+
+            // Ensure selectedPlant property is updated for UI bindings
+            oModel.setProperty("/selectedPlant", sPlant);
+
             var aAllIncidents = oModel.getProperty("/incidents");
             var aAllRisks = oModel.getProperty("/risks");
 
