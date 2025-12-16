@@ -13,6 +13,7 @@
                 <Image src="./img/logo.png" height="30px" />
                 <Title level="H1" text="EHSM Portal - Safety Engineer Dashboard" />
                 <ToolbarSpacer />
+                <Title text="{session>/currentUser}" level="H3" class="sapUiTinyMarginEnd" />
                 <Button icon="sap-icon://log" type="Transparent" press="onLogout" tooltip="Logout"/>
             </tnt:ToolHeader>
         </tnt:header>

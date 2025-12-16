@@ -8,8 +8,8 @@ sap.ui.define([
     return Controller.extend("eshm.controller.Login", {
         onInit: function () {
             var oModel = new JSONModel({
-                empId: "00000001",
-                password: "12345"
+                empId: "",
+                password: ""
             });
             this.getView().setModel(oModel);
         },
@@ -23,7 +23,7 @@ sap.ui.define([
             // Mock Validation for multiple users
             var aValidUsers = ["00000001", "00000002", "00000003", "00000004", "00000005", "00000006", "00000007"];
 
-            if (aValidUsers.includes(sEmpId) && sPassword === "12345") {
+            if (sEmpId && aValidUsers.includes(sEmpId.trim()) && sPassword === "12345") {
                 MessageToast.show("Login Successful! Fetching data from backend...");
 
                 // Store the logged in user in global model if needed later
