@@ -63,13 +63,13 @@
       "i18n": {
         "type": "sap.ui.model.resource.ResourceModel",
         "settings": {
-          "bundleName": "eshm.i18n.i18n"
+          "bundleName": "eshm.i18n.i18n",
+          "supportedLocales": [
+            "",
+            "en"
+          ],
+          "fallbackLocale": "en"
         }
-      },
-      "": {
-        "dataSource": "mainService",
-        "preload": true,
-        "settings": {}
       }
     },
     "resources": {
