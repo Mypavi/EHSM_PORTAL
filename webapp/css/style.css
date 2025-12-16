@@ -1,116 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
 /* Global Styles */
+.sapMPage,
+.sapUiBody,
+.sapMText,
+.sapMTitle,
+.sapMLabel,
+.sapMBtn,
+.sapMInputBase {
+    font-family: 'Poppins', sans-serif !important;
+}
+
 .sapMPage {
-    background-color: #f4f6f9;
-    font-family: 'Inter', 'Segoe UI', sans-serif;
+    background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
 }
 
-/* Login Page Styles */
+/* Login Page Styles - Enhanced */
 .loginPage .sapMPageScroll {
-    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     display: flex;
     align-items: center;
     justify-content: center;
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
 }
 
-.loginGrid {
-    padding-top: 5rem;
-}
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
 
-.loginContainer {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .loginPanel {
-    background: rgba(255, 255, 255, 0.95) !important;
-    border-radius: 12px;
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(4px);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    padding: 2rem !important;
+    background: rgba(255, 255, 255, 0.85) !important;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 2.5rem !important;
+    animation: float 6s ease-in-out infinite;
 }
 
-.loginTitle {
-    color: #ffffff !important;
-    font-weight: 700 !important;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
 
-.loginLogo {
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
 }
 
 .loginButton .sapMBtnInner {
-    background-color: #1e3c72;
-    border-color: #1e3c72;
+    background: linear-gradient(to right, #667eea, #764ba2);
+    border: none;
     color: white;
     font-weight: 600;
-    border-radius: 6px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: all 0.2s ease;
+    border-radius: 30px;
+    padding: 0 2rem;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    transition: all 0.3s ease;
 }
 
 .loginButton:hover .sapMBtnInner {
-    background-color: #2a5298;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
 }
 
-/* Dashboard Styles */
+/* Dashboard Animations */
+.dashboardContent {
+    animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* KPI Tiles - Interactive & Premium */
+.tileContainer {
+    perspective: 1000px;
+}
+
 .tileLayout {
-    transition: transform 0.2s, box-shadow 0.2s;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-radius: 16px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
     background: white;
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    border: none;
     overflow: hidden;
-}
-
-/* Specific styling for the tiles to look distinct */
-.tileLayout:nth-child(1) {
-    border-top: 4px solid #d93025;
-    /* Red for Incidents */
-}
-
-.tileLayout:nth-child(2) {
-    border-top: 4px solid #f9ab00;
-    /* Yellow/Orange for Risks */
-}
-
-.tileLayout:nth-child(3) {
-    border-top: 4px solid #1e8e3e;
-    /* Green for Safety Score */
+    position: relative;
+    z-index: 1;
 }
 
 .tileLayout:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    z-index: 2;
     cursor: pointer;
 }
 
-.sapTntToolHeader {
-    background-color: #ffffff;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+/* Colorful Accents for Tiles */
+.tileLayout:nth-child(1) {
+    border-bottom: 5px solid #ff5252;
 }
 
-.sapTntToolHeader .sapMTitle {
-    color: #333;
-    font-weight: 600;
+.tileLayout:nth-child(1):hover {
+    background: linear-gradient(to bottom, #fff, #fff0f0);
+}
+
+.tileLayout:nth-child(2) {
+    border-bottom: 5px solid #ffb142;
+}
+
+.tileLayout:nth-child(2):hover {
+    background: linear-gradient(to bottom, #fff, #fff9ed);
+}
+
+.tileLayout:nth-child(3) {
+    border-bottom: 5px solid #33d9b2;
+}
+
+.tileLayout:nth-child(3):hover {
+    background: linear-gradient(to bottom, #fff, #eafff9);
 }
 
 /* Table Enhancements */
+.sapMListTbl {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border: none;
+}
+
 .sapMListTblHeader {
-    background-color: #f8f9fa;
+    background: #f8f9fa;
+    border-bottom: 2px solid #e9ecef;
+}
+
+.sapMListTblRow {
+    transition: background-color 0.2s;
+}
+
+.sapMListTblRow:hover {
+    background-color: #f1f3f5 !important;
+    transform: scale(1.005);
+    z-index: 10;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    position: relative;
+}
+
+/* Status Badges */
+.sapMObjectStatus {
     font-weight: 600;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
 }
 
-.sapMText {
-    color: #495057;
-}
-
-/* Status Colors customization (if needed beyond standard semantic) */
 .sapMObjectStatusError .sapMObjectStatusText {
-    font-weight: bold;
+    color: #d63031;
+}
+
+.sapMObjectStatusWarning .sapMObjectStatusText {
+    color: #e17055;
+}
+
+.sapMObjectStatusSuccess .sapMObjectStatusText {
+    color: #00b894;
+}
+
+/* Side Navigation */
+.sapTntSideNavigation {
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.03);
+    border-right: none;
+}
+
+.sapTntToolHeader {
+    background: white;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    z-index: 100;
 }

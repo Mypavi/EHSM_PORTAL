@@ -32,7 +32,7 @@
                 <pages>
                     <Page id="overviewPage" title="Overview" showHeader="false">
                         <content>
-                            <VBox class="sapUiContentPadding" width="100%">
+                            <VBox class="sapUiContentPadding dashboardContent" width="100%">
                                 <Title text="Key Performance Indicators" titleStyle="H2" class="sapUiMediumMarginBottom"/>
                                 <HBox wrap="Wrap" class="tileContainer">
                                     <GenericTile class="sapUiMediumMarginEnd sapUiMediumMarginBottom tileLayout" header="Open Incidents" subheader="High Priority" press="onPressTileIncident">
