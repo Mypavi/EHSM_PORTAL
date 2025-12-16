@@ -1,11 +1,13 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "sap/ui/model/json/JSONModel",
-    "sap/ui/core/format/DateFormat"
-], function (Controller, JSONModel, DateFormat) {
+    "sap/ui/core/format/DateFormat",
+    "sap/m/MessageToast"
+], function (Controller, JSONModel, DateFormat, MessageToast) {
     "use strict";
 
     return Controller.extend("eshm.controller.Dashboard", {
+        // ... existing formatter ...
         formatter: {
             priorityState: function (sPriority) {
                 switch (sPriority) {
@@ -51,7 +53,17 @@ sap.ui.define([
                     { IncidentId: "INC000041", Plant: "AT01", IncidentDescription: "Chemical leak in storage", IncidentCategory: "Environmental", IncidentPriority: "Medium", IncidentStatus: "In Progress", IncidentDate: "2025-07-10" },
                     { IncidentId: "INC000046", Plant: "AT01", IncidentDescription: "Equipment malfunction in assembly", IncidentCategory: "Safety", IncidentPriority: "High", IncidentStatus: "Open", IncidentDate: "2025-07-05" },
                     { IncidentId: "INC000051", Plant: "AT01", IncidentDescription: "Fire Accident", IncidentCategory: "Operational", IncidentPriority: "Low", IncidentStatus: "Closed", IncidentDate: "2025-06-30" },
-                    { IncidentId: "INC000056", Plant: "AT01", IncidentDescription: "Electrical Hazard", IncidentCategory: "Environmental", IncidentPriority: "Medium", IncidentStatus: "In Progress", IncidentDate: "2025-06-25" }
+                    { IncidentId: "INC000056", Plant: "AT01", IncidentDescription: "Electrical Hazard", IncidentCategory: "Environmental", IncidentPriority: "Medium", IncidentStatus: "In Progress", IncidentDate: "2025-06-25" },
+                    // Mock Incidents for other plants to ensure data is fetched
+                    // BE01 Incidents
+                    { IncidentId: "INC000101", Plant: "BE01", IncidentDescription: "Chemical spill", IncidentCategory: "Environmental", IncidentPriority: "High", IncidentStatus: "Open", IncidentDate: "2025-08-18" },
+                    { IncidentId: "INC000102", Plant: "BE01", IncidentDescription: "Machinery noise", IncidentCategory: "Operational", IncidentPriority: "Low", IncidentStatus: "Closed", IncidentDate: "2025-08-10" },
+                    // CA04 Incidents
+                    { IncidentId: "INC000201", Plant: "CA04", IncidentDescription: "Icy Walkway", IncidentCategory: "Safety", IncidentPriority: "Medium", IncidentStatus: "Open", IncidentDate: "2025-08-15" },
+                    { IncidentId: "INC000202", Plant: "CA04", IncidentDescription: "Heater failure", IncidentCategory: "Operational", IncidentPriority: "Low", IncidentStatus: "In Progress", IncidentDate: "2025-08-05" },
+                    // AU02 Incidents
+                    { IncidentId: "INC000301", Plant: "AU02", IncidentDescription: "Overheating drill", IncidentCategory: "Operational", IncidentPriority: "Medium", IncidentStatus: "Closed", IncidentDate: "2025-08-12" },
+                    { IncidentId: "INC000302", Plant: "AU02", IncidentDescription: "Dust accumulation", IncidentCategory: "Environmental", IncidentPriority: "Low", IncidentStatus: "Open", IncidentDate: "2025-08-08" }
                 ],
                 risks: [
                     { RiskId: "RISK000001", RiskDescription: "Exposure to chemical", RiskCategory: "Safety", RiskSeverity: "High", Likelihood: "Likely", MitigationMeasures: "Training", Plant: "AT01" },
@@ -132,6 +144,10 @@ sap.ui.define([
         },
 
         _filterByPlant: function (sPlant) {
+            if (sPlant) {
+                // Simulate backend fetch message
+                MessageToast.show("Fetching data for plant: " + sPlant + " from backend...");
+            }
             var aFilters = [];
             if (sPlant) {
                 aFilters.push(new sap.ui.model.Filter("Plant", sap.ui.model.FilterOperator.EQ, sPlant));
