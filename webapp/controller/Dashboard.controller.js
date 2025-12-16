@@ -90,8 +90,22 @@ sap.ui.define([
                     { RiskId: "RISK000038", RiskDescription: "Machine malfunction", RiskCategory: "Environmental", RiskSeverity: "Medium", Likelihood: "Unlikely", MitigationMeasures: "Improved Ventilation", Plant: "CA04" },
                     { RiskId: "RISK000043", RiskDescription: "Fire risk", RiskCategory: "Safety", RiskSeverity: "High", Likelihood: "Likely", MitigationMeasures: "Maintenance", Plant: "CA04" },
                     { RiskId: "RISK000048", RiskDescription: "Electrical shock haz", RiskCategory: "Operational", RiskSeverity: "Low", Likelihood: "Rare", MitigationMeasures: "Improved Ventilation", Plant: "CA04" },
+                    // CA04 Data (continued...)
                     { RiskId: "RISK000053", RiskDescription: "Exposure to chemical", RiskCategory: "Environmental", RiskSeverity: "Medium", Likelihood: "Unlikely", MitigationMeasures: "Maintenance", Plant: "CA04" },
-                    { RiskId: "RISK000058", RiskDescription: "Machine malfunction", RiskCategory: "Safety", RiskSeverity: "High", Likelihood: "Likely", MitigationMeasures: "Improved Ventilation", Plant: "CA04" }
+                    { RiskId: "RISK000058", RiskDescription: "Machine malfunction", RiskCategory: "Safety", RiskSeverity: "High", Likelihood: "Likely", MitigationMeasures: "Improved Ventilation", Plant: "CA04" },
+                    // AU02 Data
+                    { RiskId: "RISK000004", RiskDescription: "Electrical shock haz", RiskCategory: "Safety", RiskSeverity: "High", Likelihood: "Likely", MitigationMeasures: "Monitoring", Plant: "AU02" },
+                    { RiskId: "RISK000009", RiskDescription: "Exposure to chemical", RiskCategory: "Operational", RiskSeverity: "Low", Likelihood: "Rare", MitigationMeasures: "Regular Inspections", Plant: "AU02" },
+                    { RiskId: "RISK000014", RiskDescription: "Machine malfunction", RiskCategory: "Environmental", RiskSeverity: "Medium", Likelihood: "Unlikely", MitigationMeasures: "Monitoring", Plant: "AU02" },
+                    { RiskId: "RISK000019", RiskDescription: "Fire risk", RiskCategory: "Safety", RiskSeverity: "High", Likelihood: "Likely", MitigationMeasures: "Regular Inspections", Plant: "AU02" },
+                    { RiskId: "RISK000024", RiskDescription: "Electrical shock haz", RiskCategory: "Operational", RiskSeverity: "Low", Likelihood: "Rare", MitigationMeasures: "Monitoring", Plant: "AU02" },
+                    { RiskId: "RISK000029", RiskDescription: "Exposure to chemical", RiskCategory: "Environmental", RiskSeverity: "Medium", Likelihood: "Unlikely", MitigationMeasures: "Regular Inspections", Plant: "AU02" },
+                    { RiskId: "RISK000034", RiskDescription: "Machine malfunction", RiskCategory: "Safety", RiskSeverity: "High", Likelihood: "Likely", MitigationMeasures: "Monitoring", Plant: "AU02" },
+                    { RiskId: "RISK000039", RiskDescription: "Fire risk", RiskCategory: "Operational", RiskSeverity: "Low", Likelihood: "Rare", MitigationMeasures: "Regular Inspections", Plant: "AU02" },
+                    { RiskId: "RISK000044", RiskDescription: "Electrical shock haz", RiskCategory: "Environmental", RiskSeverity: "Medium", Likelihood: "Unlikely", MitigationMeasures: "Monitoring", Plant: "AU02" },
+                    { RiskId: "RISK000049", RiskDescription: "Exposure to chemical", RiskCategory: "Safety", RiskSeverity: "High", Likelihood: "Likely", MitigationMeasures: "Regular Inspections", Plant: "AU02" },
+                    { RiskId: "RISK000054", RiskDescription: "Machine malfunction", RiskCategory: "Operational", RiskSeverity: "Low", Likelihood: "Rare", MitigationMeasures: "Monitoring", Plant: "AU02" },
+                    { RiskId: "RISK000059", RiskDescription: "Fire risk", RiskCategory: "Environmental", RiskSeverity: "Medium", Likelihood: "Unlikely", MitigationMeasures: "Regular Inspections", Plant: "AU02" }
                 ],
                 plants: [
                     { key: "AT01", text: "AT01 - Austria Plant" },
@@ -148,6 +162,9 @@ sap.ui.define([
             } else if (sPlant === "CA04") {
                 oModel.setProperty("/kpi/openIncidents", 0);
                 oModel.setProperty("/kpi/highRisks", 3);
+            } else if (sPlant === "AU02") {
+                oModel.setProperty("/kpi/openIncidents", 0);
+                oModel.setProperty("/kpi/highRisks", 4);
             } else {
                 oModel.setProperty("/kpi/openIncidents", 0);
                 oModel.setProperty("/kpi/highRisks", 0);
