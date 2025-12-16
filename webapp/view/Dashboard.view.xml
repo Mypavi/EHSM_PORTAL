@@ -12,6 +12,16 @@
                 <Button icon="sap-icon://menu2" type="Transparent" press="onSideNavButtonPress" />
                 <Image src="./img/logo.png" height="30px" />
                 <Title level="H1" text="EHSM Portal - Safety Engineer Dashboard" />
+                <ToolbarSpacer width="2rem"/>
+                <ComboBox 
+                    id="plantSelector"
+                    items="{/plants}"
+                    selectedKey="{/selectedPlant}"
+                    selectionChange="onPlantChange"
+                    width="300px"
+                    placeholder="Select Plant">
+                    <core:Item key="{key}" text="{text}" />
+                </ComboBox>
                 <ToolbarSpacer />
                 <Title text="{session>/currentUser}" level="H3" class="sapUiTinyMarginEnd" />
                 <Button icon="sap-icon://log" type="Transparent" press="onLogout" tooltip="Logout"/>

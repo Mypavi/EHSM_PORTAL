@@ -65,8 +65,42 @@ sap.ui.define([
                     { RiskId: "RISK000041", RiskDescription: "Exposure to chemical", RiskCategory: "Environmental", RiskSeverity: "Medium", Likelihood: "Unlikely", MitigationMeasures: "Training", Plant: "AT01" },
                     { RiskId: "RISK000046", RiskDescription: "Machine malfunction", RiskCategory: "Safety", RiskSeverity: "High", Likelihood: "Likely", MitigationMeasures: "Automation Upgrade", Plant: "AT01" },
                     { RiskId: "RISK000051", RiskDescription: "Fire risk", RiskCategory: "Operational", RiskSeverity: "Low", Likelihood: "Rare", MitigationMeasures: "Training", Plant: "AT01" },
-                    { RiskId: "RISK000056", RiskDescription: "Electrical shock haz", RiskCategory: "Environmental", RiskSeverity: "Medium", Likelihood: "Unlikely", MitigationMeasures: "Automation Upgrade", Plant: "AT01" }
-                ]
+                    { RiskId: "RISK000056", RiskDescription: "Electrical shock haz", RiskCategory: "Environmental", RiskSeverity: "Medium", Likelihood: "Unlikely", MitigationMeasures: "Automation Upgrade", Plant: "AT01" },
+                    // BE01 Data
+                    { RiskId: "RISK000005", RiskDescription: "Exposure to chemical", RiskCategory: "Environmental", RiskSeverity: "Medium", Likelihood: "Unlikely", MitigationMeasures: "Emergency Drill", Plant: "BE01" },
+                    { RiskId: "RISK000010", RiskDescription: "Machine malfunction", RiskCategory: "Safety", RiskSeverity: "High", Likelihood: "Likely", MitigationMeasures: "First Aid Training", Plant: "BE01" },
+                    { RiskId: "RISK000015", RiskDescription: "Fire risk", RiskCategory: "Operational", RiskSeverity: "Low", Likelihood: "Rare", MitigationMeasures: "Emergency Drill", Plant: "BE01" },
+                    { RiskId: "RISK000020", RiskDescription: "Electrical shock haz", RiskCategory: "Environmental", RiskSeverity: "Medium", Likelihood: "Unlikely", MitigationMeasures: "First Aid Training", Plant: "BE01" },
+                    { RiskId: "RISK000025", RiskDescription: "Exposure to chemical", RiskCategory: "Safety", RiskSeverity: "High", Likelihood: "Likely", MitigationMeasures: "Emergency Drill", Plant: "BE01" },
+                    { RiskId: "RISK000030", RiskDescription: "Machine malfunction", RiskCategory: "Operational", RiskSeverity: "Low", Likelihood: "Rare", MitigationMeasures: "First Aid Training", Plant: "BE01" },
+                    { RiskId: "RISK000035", RiskDescription: "Fire risk", RiskCategory: "Environmental", RiskSeverity: "Medium", Likelihood: "Unlikely", MitigationMeasures: "Emergency Drill", Plant: "BE01" },
+                    { RiskId: "RISK000040", RiskDescription: "Electrical shock haz", RiskCategory: "Safety", RiskSeverity: "High", Likelihood: "Likely", MitigationMeasures: "First Aid Training", Plant: "BE01" },
+                    { RiskId: "RISK000045", RiskDescription: "Exposure to chemical", RiskCategory: "Operational", RiskSeverity: "Low", Likelihood: "Rare", MitigationMeasures: "Emergency Drill", Plant: "BE01" },
+                    { RiskId: "RISK000050", RiskDescription: "Machine malfunction", RiskCategory: "Environmental", RiskSeverity: "Medium", Likelihood: "Unlikely", MitigationMeasures: "First Aid Training", Plant: "BE01" },
+                    { RiskId: "RISK000055", RiskDescription: "Fire risk", RiskCategory: "Safety", RiskSeverity: "High", Likelihood: "Likely", MitigationMeasures: "Emergency Drill", Plant: "BE01" },
+                    { RiskId: "RISK000060", RiskDescription: "Electrical shock haz", RiskCategory: "Operational", RiskSeverity: "Low", Likelihood: "Rare", MitigationMeasures: "First Aid Training", Plant: "BE01" },
+                    // CA04 Data
+                    { RiskId: "RISK000003", RiskDescription: "Fire risk", RiskCategory: "Operational", RiskSeverity: "Low", Likelihood: "Rare", MitigationMeasures: "Maintenance", Plant: "CA04" },
+                    { RiskId: "RISK000008", RiskDescription: "Electrical shock haz", RiskCategory: "Environmental", RiskSeverity: "Medium", Likelihood: "Unlikely", MitigationMeasures: "Improved Ventilation", Plant: "CA04" },
+                    { RiskId: "RISK000013", RiskDescription: "Exposure to chemical", RiskCategory: "Safety", RiskSeverity: "High", Likelihood: "Likely", MitigationMeasures: "Maintenance", Plant: "CA04" },
+                    { RiskId: "RISK000018", RiskDescription: "Machine malfunction", RiskCategory: "Operational", RiskSeverity: "Low", Likelihood: "Rare", MitigationMeasures: "Improved Ventilation", Plant: "CA04" },
+                    { RiskId: "RISK000023", RiskDescription: "Fire risk", RiskCategory: "Environmental", RiskSeverity: "Medium", Likelihood: "Unlikely", MitigationMeasures: "Maintenance", Plant: "CA04" },
+                    { RiskId: "RISK000028", RiskDescription: "Electrical shock haz", RiskCategory: "Safety", RiskSeverity: "High", Likelihood: "Likely", MitigationMeasures: "Improved Ventilation", Plant: "CA04" },
+                    { RiskId: "RISK000033", RiskDescription: "Exposure to chemical", RiskCategory: "Operational", RiskSeverity: "Low", Likelihood: "Rare", MitigationMeasures: "Maintenance", Plant: "CA04" },
+                    { RiskId: "RISK000038", RiskDescription: "Machine malfunction", RiskCategory: "Environmental", RiskSeverity: "Medium", Likelihood: "Unlikely", MitigationMeasures: "Improved Ventilation", Plant: "CA04" },
+                    { RiskId: "RISK000043", RiskDescription: "Fire risk", RiskCategory: "Safety", RiskSeverity: "High", Likelihood: "Likely", MitigationMeasures: "Maintenance", Plant: "CA04" },
+                    { RiskId: "RISK000048", RiskDescription: "Electrical shock haz", RiskCategory: "Operational", RiskSeverity: "Low", Likelihood: "Rare", MitigationMeasures: "Improved Ventilation", Plant: "CA04" },
+                    { RiskId: "RISK000053", RiskDescription: "Exposure to chemical", RiskCategory: "Environmental", RiskSeverity: "Medium", Likelihood: "Unlikely", MitigationMeasures: "Maintenance", Plant: "CA04" },
+                    { RiskId: "RISK000058", RiskDescription: "Machine malfunction", RiskCategory: "Safety", RiskSeverity: "High", Likelihood: "Likely", MitigationMeasures: "Improved Ventilation", Plant: "CA04" }
+                ],
+                plants: [
+                    { key: "AT01", text: "AT01 - Austria Plant" },
+                    { key: "AU01", text: "AU01 - Australia Plant 1" },
+                    { key: "AU02", text: "AU02 - Australia Plant 2" },
+                    { key: "BE01", text: "BE01 - Belgium Plant" },
+                    { key: "CA04", text: "CA04 - Canada Plant" }
+                ],
+                selectedPlant: "AT01"
             };
 
             // Convert string dates to Date objects for proper formatting in UI
@@ -78,6 +112,51 @@ sap.ui.define([
 
             var oModel = new JSONModel(oData);
             this.getView().setModel(oModel);
+
+            // Initial Filter
+            this._filterByPlant("AT01");
+        },
+
+        _filterByPlant: function (sPlant) {
+            var aFilters = [];
+            if (sPlant) {
+                aFilters.push(new sap.ui.model.Filter("Plant", sap.ui.model.FilterOperator.EQ, sPlant));
+            }
+
+            // Filter Incidents Table
+            var oTableIncidents = this.byId("incidentsTable");
+            if (oTableIncidents) {
+                var oBindingIncidents = oTableIncidents.getBinding("items");
+                if (oBindingIncidents) oBindingIncidents.filter(aFilters);
+            }
+
+            // Filter Risks Table
+            var oTableRisks = this.byId("risksTable");
+            if (oTableRisks) {
+                var oBindingRisks = oTableRisks.getBinding("items");
+                if (oBindingRisks) oBindingRisks.filter(aFilters);
+            }
+
+            // Update KPIs based on selected plant (Mock Logic)
+            var oModel = this.getView().getModel();
+            if (sPlant === "AT01") {
+                oModel.setProperty("/kpi/openIncidents", 4);
+                oModel.setProperty("/kpi/highRisks", 4);
+            } else if (sPlant === "BE01") {
+                oModel.setProperty("/kpi/openIncidents", 0);
+                oModel.setProperty("/kpi/highRisks", 3);
+            } else if (sPlant === "CA04") {
+                oModel.setProperty("/kpi/openIncidents", 0);
+                oModel.setProperty("/kpi/highRisks", 3);
+            } else {
+                oModel.setProperty("/kpi/openIncidents", 0);
+                oModel.setProperty("/kpi/highRisks", 0);
+            }
+        },
+
+        onPlantChange: function (oEvent) {
+            var sSelectedPlant = oEvent.getParameter("selectedItem").getKey();
+            this._filterByPlant(sSelectedPlant);
         },
 
         onSideNavButtonPress: function () {
