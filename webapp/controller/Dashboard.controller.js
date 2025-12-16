@@ -69,6 +69,13 @@ sap.ui.define([
                 ]
             };
 
+            // Convert string dates to Date objects for proper formatting in UI
+            oData.incidents.forEach(function (incident) {
+                if (incident.IncidentDate) {
+                    incident.IncidentDate = new Date(incident.IncidentDate);
+                }
+            });
+
             var oModel = new JSONModel(oData);
             this.getView().setModel(oModel);
         },
