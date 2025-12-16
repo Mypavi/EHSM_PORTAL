@@ -23,7 +23,14 @@ sap.ui.define([
             // Mock Validation for multiple users
             var aValidUsers = ["00000001", "00000002", "00000003", "00000004", "00000005", "00000006", "00000007"];
 
-            if (sEmpId && aValidUsers.includes(sEmpId.trim()) && sPassword === "12345") {
+            // Auto-pad input for convenience (e.g. "1" -> "00000001")
+            if (sEmpId) {
+                sEmpId = sEmpId.trim().padStart(8, "0");
+                // Update the model so the user sees the padded ID
+                oModel.setProperty("/empId", sEmpId);
+            }
+
+            if (sEmpId && aValidUsers.includes(sEmpId) && sPassword === "12345") {
                 MessageToast.show("Login Successful! Fetching data from backend...");
 
                 // Store the logged in user in global model if needed later
