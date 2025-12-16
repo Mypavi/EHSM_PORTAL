@@ -49,7 +49,10 @@
       "minUI5Version": "1.143.2",
       "libs": {
         "sap.m": {},
-        "sap.ui.core": {}
+        "sap.ui.core": {},
+        "sap.tnt": {},
+        "sap.suite.ui.microchart": {},
+        "sap.ui.layout": {}
       }
     },
     "contentDensities": {
@@ -90,17 +93,28 @@
       },
       "routes": [
         {
-          "name": "RouteView1",
-          "pattern": ":?query:",
+          "name": "RouteLogin",
+          "pattern": "",
           "target": [
-            "TargetView1"
+            "TargetLogin"
+          ]
+        },
+        {
+          "name": "RouteDashboard",
+          "pattern": "dashboard",
+          "target": [
+            "TargetDashboard"
           ]
         }
       ],
       "targets": {
-        "TargetView1": {
-          "id": "View1",
-          "name": "View1"
+        "TargetLogin": {
+          "id": "Login",
+          "name": "Login"
+        },
+        "TargetDashboard": {
+          "id": "Dashboard",
+          "name": "Dashboard"
         }
       }
     },

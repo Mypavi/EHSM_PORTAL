@@ -1,1 +1,97 @@
-/* Enter your custom styles here */
+/* Global Styles */
+.sapMPage {
+    background-color: #f4f6f9;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+/* Login Page Styles */
+.loginPage .sapMPageScroll {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loginGrid {
+    padding-top: 5rem;
+}
+
+.loginContainer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loginPanel {
+    background: rgba(255, 255, 255, 0.95) !important;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 2rem !important;
+}
+
+.loginTitle {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.loginLogo {
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+.loginButton .sapMBtnInner {
+    background-color: #1e3c72;
+    border-color: #1e3c72;
+    color: white;
+    font-weight: 600;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: all 0.2s ease;
+}
+
+.loginButton:hover .sapMBtnInner {
+    background-color: #2a5298;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+}
+
+/* Dashboard Styles */
+.tileLayout {
+    transition: transform 0.2s, box-shadow 0.2s;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.tileLayout:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+
+.sapTntToolHeader {
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.sapTntToolHeader .sapMTitle {
+    color: #333;
+    font-weight: 600;
+}
+
+/* Table Enhancements */
+.sapMListTblHeader {
+    background-color: #f8f9fa;
+    font-weight: 600;
+}
+
+.sapMText {
+    color: #495057;
+}
+
+/* Status Colors customization (if needed beyond standard semantic) */
+.sapMObjectStatusError .sapMObjectStatusText {
+    font-weight: bold;
+}

@@ -1,0 +1,127 @@
+<mvc:View controllerName="eshm.controller.Dashboard"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:tnt="sap.tnt"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+    xmlns:mc="sap.suite.ui.microchart"
+    displayBlock="true">
+    <tnt:ToolPage id="toolPage">
+        <tnt:header>
+            <tnt:ToolHeader>
+                <Button icon="sap-icon://menu2" type="Transparent" press="onSideNavButtonPress" />
+                <Image src="./img/logo.png" height="30px" />
+                <Title level="H1" text="EHSM Portal - Safety Engineer Dashboard" />
+                <ToolbarSpacer />
+                <Button icon="sap-icon://log" type="Transparent" press="onLogout" tooltip="Logout"/>
+            </tnt:ToolHeader>
+        </tnt:header>
+        <tnt:sideContent>
+            <tnt:SideNavigation expanded="true" itemSelect="onItemSelect">
+                <tnt:item>
+                    <tnt:NavigationList>
+                        <tnt:NavigationListItem text="Overview" icon="sap-icon://home" key="overview" />
+                        <tnt:NavigationListItem text="Incidents" icon="sap-icon://alert" key="incidents" />
+                        <tnt:NavigationListItem text="Risk Assessment" icon="sap-icon://shield" key="risks" />
+                    </tnt:NavigationList>
+                </tnt:item>
+            </tnt:SideNavigation>
+        </tnt:sideContent>
+        <tnt:mainContents>
+            <NavContainer id="pageContainer" initialPage="overviewPage">
+                <pages>
+                    <Page id="overviewPage" title="Overview" showHeader="false">
+                        <content>
+                            <l:VerticalLayout class="sapUiContentPadding" width="100%">
+                                <Title text="Key Performance Indicators" titleStyle="H2" class="sapUiMediumMarginBottom"/>
+                                <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Open Incidents" subheader="High Priority" press="onPressTileIncident">
+                                    <TileContent unit="Count" footer="Current">
+                                        <NumericContent value="{/kpi/openIncidents}" icon="sap-icon://alert" valueColor="Error" />
+                                    </TileContent>
+                                </GenericTile>
+                                <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Identified Risks" subheader="High Severity" press="onPressTileRisk">
+                                    <TileContent unit="Count" footer="AT01">
+                                        <NumericContent value="{/kpi/highRisks}" icon="sap-icon://shield" valueColor="Critical" />
+                                    </TileContent>
+                                </GenericTile>
+                                <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Safety Score" subheader="Plant AT01">
+                                    <TileContent unit="%">
+                                        <NumericContent value="85" icon="sap-icon://accept" valueColor="Good" />
+                                    </TileContent>
+                                </GenericTile>
+                            </l:VerticalLayout>
+                        </content>
+                    </Page>
+                    
+                    <Page id="incidentsPage" title="Incident Management" showHeader="false">
+                        <content>
+                            <Table id="incidentsTable" inset="false" items="{/incidents}" class="sapUiResponsiveMargin" width="auto">
+                                <headerToolbar>
+                                    <OverflowToolbar>
+                                        <Title text="Incidents (Plant AT01)" level="H2"/>
+                                        <ToolbarSpacer/>
+                                        <SearchField width="200px" placeholder="Search Incidents" search="onSearchIncidents"/>
+                                    </OverflowToolbar>
+                                </headerToolbar>
+                                <columns>
+                                    <Column><Text text="ID" /></Column>
+                                    <Column><Text text="Description" /></Column>
+                                    <Column><Text text="Category" /></Column>
+                                    <Column><Text text="Priority" /></Column>
+                                    <Column><Text text="Status" /></Column>
+                                    <Column><Text text="Date" /></Column>
+                                </columns>
+                                <items>
+                                    <ColumnListItem>
+                                        <cells>
+                                            <ObjectIdentifier title="{IncidentId}"/>
+                                            <Text text="{IncidentDescription}" />
+                                            <Text text="{IncidentCategory}" />
+                                            <ObjectStatus text="{IncidentPriority}" state="{path: 'IncidentPriority', formatter: '.formatter.priorityState'}" />
+                                            <ObjectStatus text="{IncidentStatus}" state="{path: 'IncidentStatus', formatter: '.formatter.statusState'}" />
+                                            <Text text="{path: 'IncidentDate', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' }}" />
+                                        </cells>
+                                    </ColumnListItem>
+                                </items>
+                            </Table>
+                        </content>
+                    </Page>
+                    
+                    <Page id="risksPage" title="Risk Assessment" showHeader="false">
+                        <content>
+                            <Table id="risksTable" inset="false" items="{/risks}" class="sapUiResponsiveMargin" width="auto">
+                                <headerToolbar>
+                                    <OverflowToolbar>
+                                        <Title text="Risk Register (Plant AT01)" level="H2"/>
+                                        <ToolbarSpacer/>
+                                        <SearchField width="200px" placeholder="Search Risks" search="onSearchRisks"/>
+                                    </OverflowToolbar>
+                                </headerToolbar>
+                                <columns>
+                                    <Column><Text text="ID" /></Column>
+                                    <Column><Text text="Description" /></Column>
+                                    <Column><Text text="Category" /></Column>
+                                    <Column><Text text="Severity" /></Column>
+                                    <Column><Text text="Likelihood" /></Column>
+                                    <Column><Text text="Mitigation" /></Column>
+                                </columns>
+                                <items>
+                                    <ColumnListItem>
+                                        <cells>
+                                            <ObjectIdentifier title="{RiskId}"/>
+                                            <Text text="{RiskDescription}" />
+                                            <Text text="{RiskCategory}" />
+                                            <ObjectStatus text="{RiskSeverity}" state="{path: 'RiskSeverity', formatter: '.formatter.severityState'}" />
+                                            <Text text="{Likelihood}" />
+                                            <Text text="{MitigationMeasures}" />
+                                        </cells>
+                                    </ColumnListItem>
+                                </items>
+                            </Table>
+                        </content>
+                    </Page>
+                </pages>
+            </NavContainer>
+        </tnt:mainContents>
+    </tnt:ToolPage>
+</mvc:View>
