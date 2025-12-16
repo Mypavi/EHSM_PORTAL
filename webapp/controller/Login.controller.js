@@ -20,10 +20,20 @@ sap.ui.define([
             var sPassword = oModel.getProperty("/password");
 
             // Mock Validation based on User Request
-            if (sEmpId === "00000001" && sPassword === "12345") {
-                MessageToast.show("Login Successful!");
+            // Mock Validation for multiple users
+            var aValidUsers = ["00000001", "00000002", "00000003", "00000004", "00000005", "00000006", "00000007"];
+
+            if (aValidUsers.includes(sEmpId) && sPassword === "12345") {
+                MessageToast.show("Login Successful! Fetching data from backend...");
+
+                // Store the logged in user in global model if needed later
+                this.getOwnerComponent().setModel(new JSONModel({ currentUser: sEmpId }), "session");
+
                 var oRouter = this.getOwnerComponent().getRouter();
-                oRouter.navTo("RouteDashboard");
+                // Delay slightly to simulate fetch
+                setTimeout(function () {
+                    oRouter.navTo("RouteDashboard");
+                }, 1000);
             } else {
                 MessageToast.show("Invalid Credentials. Please try again.");
             }
